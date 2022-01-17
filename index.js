@@ -12,6 +12,15 @@ app.get("/herois", (req, res) => {
     res.send(lista)
 })
 
+
+app.get("/herois/:id", (req, res) => {
+  const id = req.params.id;
+
+  const item = lista[id]
+
+  res.send(item)
+})
+
 app.listen(port, () => {
   console.log(`connected at http://localhost:${port}`)
 })
